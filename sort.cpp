@@ -43,6 +43,21 @@ void Sort::insertionSort(vector<double> v) {
 void Sort::selectionSort(vector<double> v) {
 	vector<double> vect = v;
 	//selectionSortsort
+	long size = vect.size();
+	for (int i = 0; i < size - 1;++i)
+	{
+	    double smallestIndex = i;
+	    for (int j = i + 1; j < size; ++j)
+	    {
+	        if (vect[j] < vect[smallestIndex])
+	        {
+	            smallestIndex = j;
+	        }
+	    }
+	    double temp = vect[i];
+	    vect[i] = vect[smallestIndex];
+	    vect[smallestIndex] = temp;
+	}
 	print(vect);
 }
 
